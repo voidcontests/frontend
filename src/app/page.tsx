@@ -1,3 +1,6 @@
+"use client";
+
+import { PrivateData } from "@/components/PrivateData";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -6,6 +9,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { useTonProof } from "@/hooks/useTonProof";
 import { ArrowRight } from "lucide-react";
 
 import Link from "next/link";
@@ -55,6 +59,8 @@ const targets = [
 ];
 
 export default function Home() {
+  useTonProof();
+
   return (
     <div className="flex justify-center">
       <div className="w-[1200px]">
@@ -69,12 +75,10 @@ export default function Home() {
           and <b>participating</b> in programming contests
         </p>
         <div className="flex justify-center gap-4 mt-[30px] mb-[50px]">
+          <PrivateData />
           <Button variant="outline">
             EXPLORE CONTESTS <ArrowRight />
           </Button>
-          {/* <Button variant="outline">
-            BUTTONS
-          </Button> */}
         </div>
         {/* Cards */}
         <h2 className="text-3xl text-foreground font-bold my-[15px]">
